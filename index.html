@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Audio analyser</title>
+  <script src="./analyser.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="tableContainer">
+    <div>
+      <button id="freq">Frequency graph</button>
+      <button id="wave">Waveform graph</button>
+      <button id="spec">Spectrogram</button>
+      <input type="checkbox" id="fillTable" name="fillTable">
+      <label for="fillTable">Print intensity</label>
+      <button id="zoomIn">Zoom in</button>
+      <button id="zoomOut">Zoom out</button>
+      <span>Max frequency: <span id="maxFreq"></span></span>
+      <br>
+      <label for="speed">Speed</label>
+      <input type="range" min="1" max="5" step="1" value="1" name="speed" id="speed">
+      <br>
+      <label for="cutoff">Cutoff decibels</label>
+      <input type="range" min="-200" max="-10" step="10" value="-100" name="cutoff" id="cutoff">
+      <br>
+      <input type="file" id="audioInput" accept="audio/*">
+      <!-- <br> -->
+      <!-- <progress id="prog" value="0" max="100"></progress> -->
+      <!-- <button id="toggle">Pause/Play</button> -->
+      <br>
+      
+      <canvas width="200" height="100" id="fpsGraph"></canvas>
+      <br>
+      <span id="fps">0</span> updates/sec
+    </div>
+    <br>
+    <table id="table" style="display: none">
+      <tr>
+        <th>Freq Bin</th>
+        <th>Intensity (dB)</th>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
